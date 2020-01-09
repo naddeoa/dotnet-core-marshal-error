@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="src/Native/SendInput.fs" />
+    <Compile Include="src/Native/Hooks.fs" />
+    <Compile Include="src/Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- During local development -->
+    <Reference Include="../StrokesCore/bin/Debug/netstandard2.0/StrokesCore.dll" />
+    <!-- During building -->
+    <!-- <PackageReference Include="Strokes.Core" Version="1.0.0" /> -->
+  </ItemGroup>
+
+
+  <!-- Transitive dependencies -->
+  <!-- Should I need to declare these? -->
+  <ItemGroup>
+    <PackageReference Include="FSharp.Data" Version="3.3.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="System.Runtime.InteropServices" Version="4.3.0" />
+  </ItemGroup>
+</Project>
