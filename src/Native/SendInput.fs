@@ -5,8 +5,6 @@ open System.ComponentModel
 open System.Runtime.InteropServices
 open System.Text
 
-
-
 [<StructLayout(LayoutKind.Sequential)>]
 type private MOUSEINPUT = struct
     val dx: int32
